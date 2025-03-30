@@ -1,0 +1,118 @@
+.beat-display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.beat-display.fever-mode {
+  animation: feverPulse 1.5s infinite;
+  border: 1px solid var(--accent-color);
+  background-color: rgba(46, 2, 89, 0.4);
+}
+
+.track-container {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.beat-tracks {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.beat-track {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease;
+}
+
+.beat-track.active {
+  background-color: rgba(46, 2, 89, 0.3);
+}
+
+.beat {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+  will-change: transform, background-color, box-shadow;
+  transform: scale(1);
+}
+
+.beat.pulse {
+  animation: beatPulse 0.2s ease-out;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.sequence-indicator {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.watching {
+  color: var(--warning-color);
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+
+.your-turn {
+  color: var(--success-color);
+  font-weight: bold;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes beatPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+} 

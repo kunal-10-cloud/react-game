@@ -1,0 +1,120 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  gap: 1.5rem;
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  animation: fadeIn 0.5s ease;
+}
+
+.game-over h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--danger-color);
+  text-shadow: 0 0 10px rgba(220, 53, 69, 0.7);
+}
+
+.game-over p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.game-over-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.game-over-buttons button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.game-over-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sound-packs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.sound-packs p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.sound-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sound-buttons button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sound-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sound-buttons button.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fever mode effect */
+@keyframes feverPulse {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(155, 77, 202, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(155, 77, 202, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px 2px rgba(155, 77, 202, 0.5);
+  }
+} 

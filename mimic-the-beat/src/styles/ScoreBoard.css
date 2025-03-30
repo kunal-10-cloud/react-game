@@ -1,0 +1,93 @@
+.score-board {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.score-board.fever-mode {
+  animation: feverPulse 1.5s infinite;
+  background-color: rgba(46, 2, 89, 0.5);
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.score-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.lives-container {
+  display: flex;
+  gap: 3px;
+}
+
+.heart {
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.heart.empty {
+  opacity: 0.5;
+}
+
+.combo-highlight {
+  color: var(--warning-color);
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
+}
+
+.fever-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: 10px;
+  animation: pulseFever 1s infinite;
+}
+
+@keyframes pulseFever {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+  .score-container {
+    flex-wrap: wrap;
+  }
+  
+  .score-item {
+    flex: 1 0 40%;
+  }
+} 

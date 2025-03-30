@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #2e0259;
+  --accent-color: #9b4dca;
+  --light-color: #f0e6ff;
+  --dark-color: #1a0033;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+  color: var(--light-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(155, 77, 202, 0.7);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent-color);
+}
+
+.start-screen {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.start-screen p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.key {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 5px;
+  font-weight: bold;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sound-pack-selection {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.sound-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.sound-button {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sound-button:hover {
+  background-color: rgba(155, 77, 202, 0.3);
+  transform: translateY(-2px);
+}
+
+.sound-button.active {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(155, 77, 202, 0.5);
+  transform: translateY(-2px);
+}
+
+.start-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+  background-color: #8a3ab9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.start-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}

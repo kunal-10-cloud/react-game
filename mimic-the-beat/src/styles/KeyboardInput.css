@@ -1,0 +1,94 @@
+.keyboard-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.keyboard-input.inactive {
+  opacity: 0.6;
+  filter: grayscale(50%);
+}
+
+.keyboard-input.fever-mode {
+  animation: feverPulse 1.5s infinite;
+  background-color: rgba(46, 2, 89, 0.4);
+}
+
+.keyboard-instructions {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.keyboard-keys {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.key-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.05s ease-out;
+  position: relative;
+  top: 0;
+  will-change: transform, background-color, box-shadow, top;
+}
+
+.key-button:disabled {
+  cursor: not-allowed;
+}
+
+.key-button:hover:not(:disabled) {
+  background-color: rgba(46, 2, 89, 0.8);
+}
+
+.key-button.active {
+  background-color: var(--accent-color);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  top: 2px;
+  transform: scale(0.98);
+  transition: all 0.05s ease-in;
+}
+
+/* Key press animation */
+@keyframes keyPress {
+  0% {
+    transform: scale(1);
+    background-color: var(--primary-color);
+  }
+  50% {
+    transform: scale(0.95);
+    background-color: var(--accent-color);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--primary-color);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .key-button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+} 
